@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            Train Booking Emulator
+        </title>
+
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <h1>Train Booking Emulator</h1>
+
+            <p>Ticket Type: <select id="ticketType" onchange="selectTicketType()"><option value="single">Single</option><option value="return">Return</option></select></p>
+            
+            <div id="single">
+                <h2>Outbound Train</h2>
+                <p>Departure Date: <input type="date" id="outDepartureDate" onchange="getInputData(this)" required/></p>
+                <p>Departure Time: <input type="time" id="outDepartureTime" onchange="getInputData(this)" required/></p>
+                <p>Departure Station: <input type="text" id="outDepartureStation" onchange="getInputData(this)" required/></p>
+                <p>Destination Station: <input type="text" id="outDestinationStation" onchange="getInputData(this)" required/></p>
+                
+            </div>
+
+            <div id="return" class="initiallyHidden">
+                <h2>Inbound Train</h2>
+                <p>Departure Date: <input type="date" id="inDepartureDate" onchange="getInputData(this)"/></p>
+                <p>Departure Time: <input type="time" id="inDepartureTime" onchange="getInputData(this)"/></p>
+                <p>Departure Station: <input type="text" id="inDepartureStation" onchange="getInputData(this)"/></p>
+                <p>Destination Station: <input type="text" id="inDestinationStation" onchange="getInputData(this)"/></p>
+
+            </div>
+            <button onclick="processOrder()">submit</button>
+        </div>
+        
+
+    <footer>
+        <p>Train Booking Emulator v1 ~ Oli Sharp, Jan 2024</p>
+    </footer>
+    
+
+</html>
